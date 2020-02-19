@@ -26,6 +26,12 @@ Be aware that you can use any database you like (even SQLite3 if you don't have 
 # ./manage.py runserver
 ```
 
+or you can use the handy runserver.sh script that includes environment information:
+
+```
+# ./runserver [ use any normal options for manage.py runserver ]
+```
+
 You'll likely see a warning message saying that models may need to be migrated. You can do that like so:
 
 ```
