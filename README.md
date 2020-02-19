@@ -4,7 +4,7 @@ Content management server written with Python/Django.
 
 ## How to setup for development
 
-* Install Python 3.8.1 -- Using (pyenv)[https://github.com/pyenv/pyenv] is highly recommended.
+* Install Python 3.8.1 -- Using pyenv (see https://github.com/pyenv/pyenv) is highly recommended.
 * Clone this repo to a folder.
 
 ```
@@ -12,10 +12,10 @@ Content management server written with Python/Django.
 ```
 
 * Change to the project directory (repositext).
-* Install the packages in requirements.txt:
+* Install the packages in environment/requirements.txt:
 
 ```
-# pip install -r requirements.txt
+# pip install -r environment/requirements.txt
 ```
 
 Be aware that you can use any database you like (even SQLite3 if you don't have a db server configured) but the project is set up to use MySQL.
