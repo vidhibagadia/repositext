@@ -28,8 +28,13 @@ function reset_mysql() {
 }
 
 function migrate() {
+
+	rm -rf apps/repo/migrations
+
 	${MANAGE} makemigrations
 	${MANAGE} migrate
+	${MANAGE} makemigrations repo
+	${MANAGE} migrate repo
 }
 
 function create_superuser() {
