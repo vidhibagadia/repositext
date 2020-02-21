@@ -23,7 +23,7 @@ class DocumentVersion(models.Model):
     )
     created = models.DateTimeField(auto_now_add=True)
     parent = models.ForeignKey(
-        'Document', on_delete=models.CASCADE, null=True, blank=True
+        'Document', on_delete=models.CASCADE
     )
 
     def __str__(self):
@@ -33,7 +33,7 @@ class DocumentVersion(models.Model):
 class Document(models.Model):
     name = models.CharField('Name', max_length=255)
     parent = models.ForeignKey(
-        'Folder', on_delete=models.CASCADE, null=True, blank=True
+        'Folder', on_delete=models.CASCADE
     )
     description = models.TextField('Description', null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
