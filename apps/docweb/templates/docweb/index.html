@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Repositext - Light CMS</title>
+
+  <style>
+    .top {
+      width; 100%
+    }
+
+    .header {
+      background-color: black;
+      left: 0;
+      right: 0;
+      margin-left: -0.6em;
+      margin-right: -0.5em;
+      min-height: 100%;
+      padding: 0.5em;
+      padding-left: 2em;
+      color: white;
+      display: grid;
+      grid-template-columns: 80% 20%;
+    }
+
+    .navigation {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1em;
+      align-content: center;
+      justify-items: end;
+      padding: 2em;
+    }
+
+    .content {
+      padding: 2em;
+    }
+
+    a, a:hover, a:active, a:visited { color: white; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <div class="top">
+      <div class="header">
+        <div class="display-name">
+          <h1>Repositext</h1>
+        </div>
+        <div class="navigation">
+          <div class="nav-item">
+            <a href="">
+              Profile
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="/admin/">
+              Admin
+            </a>
+          </div>
+          <div class="nav-item">
+            <a href="">
+              About
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="doc-view">
+        
+        <div class="doc-view-title">
+          <h2>Repository Folders</h2>
+        </div>
+
+        <div class="root-folder">
+          <p>
+            {{ root_folder.name }}
+          </p>
+          <table>
+            <tr>
+              <th>Description</th>
+              <td>{{ root_folder.description }}</td>
+            </tr>
+            <tr>
+              <th>Owner</th>
+              <td>{{ root_folder.owner }}</td>
+            </tr>
+            <tr>
+              <th>Created</th>
+              <td>{{ root_folder.created }}</td>
+            </tr>
+            <tr>
+              <th>Modified</th>
+              <td>{{ root_folder.modified }}</td>
+            </tr>
+          </table>
+
+          <p>Child folders:</p>
+
+          <ul>
+          {% for child in child_folders %}
+            <li>{{ child.name}}</li>
+          {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>
