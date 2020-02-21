@@ -20,10 +20,10 @@ function reset_mysql() {
 	CREATE_DB_CMD="create database ${DBNAME}"
 
 	echo "Dropping database ${DBNAME} ..."
-	${MYSQL} -u ${DBUSER} -p"${DBPASS}" -e $DROP_DB_CMD
+	${MYSQL} -u ${DBUSER} -p"${DBPASS}" -e "$DROP_DB_CMD"
 	echo " Done."
 	echo "Recreating database ${DBNAME} ..."
-	${MYSQL} -u ${DBUSER} -p"${DBPASS}" -e $CREATE_DB_CMD
+	${MYSQL} -u ${DBUSER} -p"${DBPASS}" -e "$CREATE_DB_CMD"
 	echo " Done."
 }
 
