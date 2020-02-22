@@ -39,7 +39,7 @@ You'll likely see a warning message saying that models may need to be migrated. 
 # ./manage.py migrate
 ```
 
-After starting the development server, you can access http://localhost:8000 or http://localhost:8000/admin if desired.
+After starting the development server, you can access http://localhost:8000/docweb/ or http://localhost:8000/admin/ if desired.
 
 In order to use the admin console, you'll need to set up a superuser like so:
 
@@ -48,3 +48,15 @@ In order to use the admin console, you'll need to set up a superuser like so:
 ```
 
 Follow the directions and you should then have a superuser login with password.
+
+Once you have Repositext running, you will run into a folder not found when you open http://localhost:8000/docweb/. You will need to add a folder called '-ROOT-' (with no parent) in the admin console.
+
+![Add root folder in django admin](docs/screenshots/add_root_folder.png)
+
+Next, to continue developing it would be good to create two more folders which are children of the -ROOT- folder:
+
+![Add root folder in django admin](docs/screenshots/add_test_folder1.png)
+
+![Add root folder in django admin](docs/screenshots/add_test_folder1.png)
+
+This isn't necessary but will help you understand the rendering of the repository/folder view.
