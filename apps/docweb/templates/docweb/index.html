@@ -35,7 +35,7 @@
       padding: 2em;
     }
 
-    a, a:hover, a:active, a:visited { color: white; }
+    .nav-item > a, .nav-item > a:hover, .nav-item > a:active, .nav-item a:visited { color: white; }
   </style>
 </head>
 <body>
@@ -76,7 +76,9 @@
 
         <div class="root-folder">
           <p>
-            {{ root_folder.name }}
+            <a href="/docweb/repository/{{ root_folder.id }}/">
+              {{ root_folder.name }}
+            </a>
           </p>
           <table>
             <tr>
@@ -96,19 +98,9 @@
               <td>{{ root_folder.modified }}</td>
             </tr>
           </table>
-
-          <p>Child folders:</p>
-
-          <ul>
-          {% for child in child_folders %}
-            <li>{{ child.name}}</li>
-          {% endfor %}
-          </ul>
         </div>
       </div>
-
     </div>
-
   </div>
 </body>
 </html>

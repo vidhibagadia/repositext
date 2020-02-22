@@ -15,3 +15,18 @@ class IndexView(View):
                 'child_folders': child_folders,
             }
         )
+
+
+class RepositoryView(View):
+    def get(self, request, folder_id):
+        top_folder = Folder.objects.get(name='ROOT')
+        child_folders = Folder.objects.filter(parent=top_folder)
+
+        return render(
+            request,
+            'docweb/repository.html',
+            {
+                'top_folder': top_folder,
+                'child_folders': child_folders,
+            }
+        )
