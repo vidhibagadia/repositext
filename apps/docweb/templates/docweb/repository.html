@@ -37,10 +37,9 @@
 
     .children {
       padding: 1em;
-      margin-top: 1em;
     }
 
-    .child-folder {
+    .child-folder, .child-document {
       margin-top: 1em;
     }
 
@@ -79,8 +78,14 @@
 
       <div class="doc-view">
         
+        <h4>
+          <a href="/docweb/">
+            Dashboard
+          </a>
+        </h4>
+
         <div class="doc-view-title">
-          <h2>Repository Folders</h2>
+          <h2>Repository</h2>
         </div>
 
         <div class="root-folder">
@@ -109,7 +114,7 @@
           </table>
         </div>
         <div class="children">
-          <p>Child Folders</p>
+          <h3>Folders</h3>
           {% for folder in child_folders %}
             <table class="child-folder">
               <tr>
@@ -130,6 +135,30 @@
               <tr>
                 <th>Modified</th>
                 <td>{{ folder.modified }}
+              </tr>
+            </table>
+          {% endfor %}
+          <h3>Documents</h3>
+          {% for document in child_documents %}
+            <table class="child-document">
+              <tr>
+                <td>{{ document.name }}</td>
+              </tr>
+              <tr>
+                <th>Description</th>
+                <td>{{ document.description }}</td>
+              </tr>
+              <tr>
+                <th>Owner</th>
+                <td>{{ document.owner }}</td>
+              </tr>
+              <tr>
+                <th>Created</th>
+                <td>{{ document.created }}</td>
+              </tr>
+              <tr>
+                <th>Modified</th>
+                <td>{{ document.modified }}
               </tr>
             </table>
           {% endfor %}

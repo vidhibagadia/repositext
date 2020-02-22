@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views import View
-from apps.repo.models import Folder
+from apps.repo.models import Document, Folder
 
 
 class IndexView(View):
@@ -21,12 +21,13 @@ class RepositoryView(View):
     def get(self, request, folder_id):
         top_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=top_folder)
-
+        child_documents = Document.objects.filter(parent=top_folder)
         return render(
             request,
             'docweb/repository.html',
             {
                 'top_folder': top_folder,
                 'child_folders': child_folders,
+                'child_documents': child_documents,
             }
         )
