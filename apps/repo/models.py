@@ -5,7 +5,8 @@ from django.db import models
 class Folder(models.Model):
     name = models.CharField('Name', max_length=255)
     parent = models.ForeignKey(
-        'Folder', on_delete=models.CASCADE, null=True, blank=True
+        'Folder', on_delete=models.CASCADE,
+        null=True, blank=True
     )
     description = models.TextField('Description', null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
