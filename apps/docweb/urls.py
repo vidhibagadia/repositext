@@ -4,5 +4,5 @@ from .views import IndexView, RepositoryView
 
 urlpatterns = [
     path('', IndexView.as_view()),
-    path('repository/', RepositoryView.as_view()),
+    path('repository/folder/<uuid:folder_id>/', RepositoryView.as_view()),
 ]

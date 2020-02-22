@@ -1,8 +1,11 @@
+import uuid
+
 from django.contrib.auth.models import User
 from django.db import models
 
 
 class Folder(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField('Name', max_length=255)
     parent = models.ForeignKey(
         'Folder', on_delete=models.CASCADE,
@@ -18,6 +21,7 @@ class Folder(models.Model):
 
 
 class DocumentVersion(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     version = models.CharField('Version', max_length=11)
     content_file = models.FileField(
         'Content File', upload_to='content/%Y/%m/%d/'
@@ -32,6 +36,7 @@ class DocumentVersion(models.Model):
 
 
 class Document(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField('Name', max_length=255)
     parent = models.ForeignKey(
         'Folder', on_delete=models.CASCADE

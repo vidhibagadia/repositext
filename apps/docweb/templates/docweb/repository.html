@@ -76,26 +76,26 @@
 
         <div class="root-folder">
           <p>
-            <a href="/docweb/repository/folder/{{ root_folder.id }}/">
-              {{ root_folder.name }}
+            <a href="/docweb/repository/{{ top_folder.id }}/">
+              {{ top_folder.name }}
             </a>
           </p>
           <table>
             <tr>
               <th>Description</th>
-              <td>{{ root_folder.description }}</td>
+              <td>{{ top_folder.description }}</td>
             </tr>
             <tr>
               <th>Owner</th>
-              <td>{{ root_folder.owner }}</td>
+              <td>{{ top_folder.owner }}</td>
             </tr>
             <tr>
               <th>Created</th>
-              <td>{{ root_folder.created }}</td>
+              <td>{{ top_folder.created }}</td>
             </tr>
             <tr>
               <th>Modified</th>
-              <td>{{ root_folder.modified }}</td>
+              <td>{{ top_folder.modified }}</td>
             </tr>
           </table>
         </div>

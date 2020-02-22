@@ -5,7 +5,7 @@ from apps.repo.models import Folder
 
 class IndexView(View):
     def get(self, request):
-        root_folder = Folder.objects.get(name='ROOT')
+        root_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=root_folder)
         return render(
             request,
@@ -19,7 +19,7 @@ class IndexView(View):
 
 class RepositoryView(View):
     def get(self, request, folder_id):
-        top_folder = Folder.objects.get(name='ROOT')
+        top_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=top_folder)
 
         return render(
