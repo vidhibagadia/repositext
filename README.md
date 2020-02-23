@@ -24,7 +24,7 @@ You may run into an issue with installing graphviz. A quick way to solve that is
 # sudo apt-get install graphviz-dev
 ```
 
-Be aware that you can use any database you like (even SQLite3 if you don't have a db server configured) but the project is set up to use MySQL.
+Be aware that you can use any database you like (even SQLite3 if you don't have a db server configured) but the project is set up to use MySQL. Just make sure that your local environment uses a local setting.py that doesn't get added to any branch you're working on (hint: put your settings-\*.py file in the .gitignore file).
 
 * Run the project:
 
