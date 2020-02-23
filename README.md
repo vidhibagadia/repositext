@@ -18,6 +18,12 @@ Content management server written with Python/Django.
 # pip install -r environment/requirements.txt
 ```
 
+You may run into an issue with installing graphviz. A quick way to solve that is by installing the graphviz-dev package.
+
+```
+# sudo apt-get install graphviz-dev
+```
+
 Be aware that you can use any database you like (even SQLite3 if you don't have a db server configured) but the project is set up to use MySQL.
 
 * Run the project:
