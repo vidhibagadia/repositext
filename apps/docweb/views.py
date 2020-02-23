@@ -18,8 +18,11 @@ class IndexView(View):
 
 
 class RepositoryView(View):
-    def get(self, request, folder_id):
-        top_folder = Folder.objects.get(name='-ROOT-')
+    def get(self, request, folder_id=None):
+        if folder_id:
+            top_folder = Folder.objects.get(pk=folder_id)
+        else:
+            top_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=top_folder)
         child_documents = Document.objects.filter(parent=top_folder)
         return render(

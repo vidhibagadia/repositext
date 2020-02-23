@@ -43,6 +43,10 @@
       margin-top: 1em;
     }
 
+    .folder-link {
+      margin-left: 10px;
+    }
+
     .nav-item > a, .nav-item > a:hover, .nav-item > a:active, .nav-item a:visited { color: white; }
   </style>
 </head>
@@ -90,9 +94,19 @@
 
         <div class="root-folder">
           <p>
-            <a href="/docweb/repository/folder/{{ top_folder.id }}/">
-              {{ top_folder.name }}
-            </a>
+            <span class="folder-link">
+              <a href="/docweb/repository/folder/{{ top_folder.id }}/">
+                {{ top_folder.name }}
+              </a>
+            </span>
+
+            <span class="folder-link">
+              {% if top_folder.parent %}
+                <a href="/docweb/repository/folder/{{ top_folder.parent.id }}/">
+                  BACK
+                </a>
+              {% endif %}
+            </span>
           </p>
           <table>
             <tr>
@@ -118,7 +132,11 @@
           {% for folder in child_folders %}
             <table class="child-folder">
               <tr>
-                <td>{{ folder.name }}</td>
+                <td>
+                  <a href="/docweb/repository/folder/{{ folder.id }}/">
+                    {{ folder.name }}
+                  </a>
+                </td>
               </tr>
               <tr>
                 <th>Description</th>
