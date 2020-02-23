@@ -2,7 +2,15 @@
 
 Content management server written with Python/Django.
 
-## How to setup for development
+## Development
+
+### A word to the interested developer
+
+This project is mainly for fun and learning. It's not particularly ambitious. As such, it is perfect for those who would like to get their feet wet in being a worker among workers and getting some pratice in a real world app that may potentially have some merit. Content management is not a particularly sexy field of software but one that is necessary for most businesses. My hope is that this will have most everything you will encounter when working on a Django project and should be useful for anyone looking to learn more.
+
+If you're new to working on open source projects and not sure how to get your environment locally set up, have a look at "How to setup for deployment and read all of it. You may not need to know all of it from the start but hopefully you will know where to go to in case you run into issues.
+
+### How to setup for development
 
 * Install Python 3.8.1 -- Using pyenv (see https://github.com/pyenv/pyenv) is highly recommended.
 * Clone this repo to a folder.
