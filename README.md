@@ -74,3 +74,12 @@ Next, to continue developing it would be good to create two more folders which a
 ![Add root folder in django admin](docs/screenshots/add_test_folder1.png)
 
 This isn't necessary but will help you understand the rendering of the repository/folder view.
+
+There is a script called reset-data.sh that will do all of these things:
+
+* Recreate/create the database (assumes you've set up the database properly in settings.py)
+* Runs makemigrations and migrate
+* Creates a superuser with username of admin and password of admin.
+* Adds the -ROOT- folder and a few test folders.
+
+To run it, call ./reset-data.sh.

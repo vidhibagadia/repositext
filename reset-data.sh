@@ -41,6 +41,10 @@ function create_superuser() {
 	${MANAGE} createsuperuser --user admin --email admin@localhost --noinput
 }
 
+function run_data_scripts() {
+	$PYTHON scripts/data/folders.py
+}
+
 function main() {
 	case $DBTYPE in
 		mysql)
@@ -53,6 +57,7 @@ function main() {
 	migrate
 	create_superuser
 	$PYTHON setadminpw.py
+	run_data_scripts
 }
 
 main
