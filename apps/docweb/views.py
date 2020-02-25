@@ -7,7 +7,7 @@ class IndexView(View):
     def get(self, request):
         root_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=root_folder)
-        recent_docs = Document.objects.filter().order_by('-created')
+        recent_docs = Document.objects.filter().order_by('-created')[:5]
         return render(
             request,
             'docweb/index.html',
