@@ -81,6 +81,22 @@
             </a>
           </h4>
         </div>
+
+        <div class="created-docs">
+          <h4>
+            Recently Added Documents
+          </h4>
+
+          <table>
+          {% for doc in recent_docs %}
+            <tr>
+              <td>{{ doc.name }}</td>
+              <td>created by {{ doc.owner }}</td>
+              <td>at {{ doc.created }}</td>
+            </tr>
+          {% endfor %}
+          </table>
+        </div>
       </div>
     </div>
   </div>
