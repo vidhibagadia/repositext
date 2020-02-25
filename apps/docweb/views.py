@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import View
+from repositext.settings import MAX_RECENT_DOCS
 from apps.repo.models import Document, Folder
 
 
@@ -7,7 +8,10 @@ class IndexView(View):
     def get(self, request):
         root_folder = Folder.objects.get(name='-ROOT-')
         child_folders = Folder.objects.filter(parent=root_folder)
-        recent_docs = Document.objects.filter().order_by('-created')[:5]
+        recent_docs = Document.objects.filter().order_by(
+            '-created'
+        )[:MAX_RECENT_DOCS]
+
         return render(
             request,
             'docweb/index.html',
