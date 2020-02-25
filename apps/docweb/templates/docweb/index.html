@@ -93,6 +93,12 @@
               <td>{{ doc.name }}</td>
               <td>created by {{ doc.owner }}</td>
               <td>at {{ doc.created }}</td>
+              <td>
+                in folder 
+                <a href="/docweb/repository/folder/{{ doc.parent.id }}/">
+                  {{ doc.parent }}
+                </a>
+              </td>
             </tr>
           {% endfor %}
           </table>
