@@ -48,6 +48,17 @@
     }
 
     .nav-item > a, .nav-item > a:hover, .nav-item > a:active, .nav-item a:visited { color: white; }
+
+    th {
+      text-align: left;
+      padding: 0.5em;
+      border-bottom: 1px dashed gray;
+    }
+
+    td {
+      padding: 1em;
+    }
+
   </style>
 </head>
 <body>
@@ -110,19 +121,23 @@
           </p>
           <table>
             <tr>
-              <th>Description</th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Owner
+                </th>
+                <th>
+                  Created
+                </th>
+                <th>
+                  Modified
+                </th>
+              </tr>
+            <tr>
               <td>{{ top_folder.description }}</td>
-            </tr>
-            <tr>
-              <th>Owner</th>
               <td>{{ top_folder.owner }}</td>
-            </tr>
-            <tr>
-              <th>Created</th>
               <td>{{ top_folder.created }}</td>
-            </tr>
-            <tr>
-              <th>Modified</th>
               <td>{{ top_folder.modified }}</td>
             </tr>
           </table>
@@ -132,54 +147,73 @@
           {% for folder in child_folders %}
             <table class="child-folder">
               <tr>
+                <th>
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Owner
+                </th>
+                <th>
+                  Created
+                </th>
+                <th>
+                  Modified
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <img src="/static/img/icons/folder.svg" />
+                </td>
                 <td>
                   <a href="/docweb/repository/folder/{{ folder.id }}/">
                     {{ folder.name }}
                   </a>
                 </td>
-              </tr>
-              <tr>
-                <th>Description</th>
                 <td>{{ folder.description }}</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
                 <td>{{ folder.owner }}</td>
-              </tr>
-              <tr>
-                <th>Created</th>
                 <td>{{ folder.created }}</td>
-              </tr>
-              <tr>
-                <th>Modified</th>
                 <td>{{ folder.modified }}
               </tr>
             </table>
           {% endfor %}
           <h3>Documents</h3>
+
+          <table class="child-document">
           {% for document in child_documents %}
-            <table class="child-document">
               <tr>
+                <th>
+                </th>
+                <th>
+                  Name
+                </th>
+                <th>
+                  Description
+                </th>
+                <th>
+                  Owner
+                </th>
+                <th>
+                  Created
+                </th>
+                <th>
+                  Modified
+                </th>
+              </tr>
+              <tr>
+                <td><img src="/static/img/icons/file.svg" /></td>
                 <td>{{ document.name }}</td>
-              </tr>
-              <tr>
-                <th>Description</th>
                 <td>{{ document.description }}</td>
-              </tr>
-              <tr>
-                <th>Owner</th>
                 <td>{{ document.owner }}</td>
-              </tr>
-              <tr>
-                <th>Created</th>
                 <td>{{ document.created }}</td>
-              </tr>
-              <tr>
-                <th>Modified</th>
                 <td>{{ document.modified }}
               </tr>
-            </table>
-          {% endfor %}
+            {% endfor %}
+          </table>
         </div>
       </div>
     </div>
