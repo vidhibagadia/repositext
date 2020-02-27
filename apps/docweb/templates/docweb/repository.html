@@ -144,6 +144,9 @@
         </div>
         <div class="children">
           <h3>Folders</h3>
+          {% if not child_folders %}
+            <p>No Folder</p>
+          {% endif %}
           {% for folder in child_folders %}
             <table class="child-folder">
               <tr>
@@ -182,7 +185,9 @@
             </table>
           {% endfor %}
           <h3>Documents</h3>
-
+          {% if not child_documents %}
+            No Document
+          {% endif %}
           <table class="child-document">
           {% for document in child_documents %}
               <tr>
