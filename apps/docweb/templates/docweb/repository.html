@@ -144,8 +144,8 @@
         </div>
         <div class="children">
           <h3>Folders</h3>
+          <table class="child-folder">
           {% for folder in child_folders %}
-            <table class="child-folder">
               <tr>
                 <th>
                 </th>
@@ -179,10 +179,12 @@
                 <td>{{ folder.created }}</td>
                 <td>{{ folder.modified }}
               </tr>
-            </table>
+            
+          {% empty %}
+            <tr><td>No Folder</td></tr>
           {% endfor %}
+          </table>
           <h3>Documents</h3>
-
           <table class="child-document">
           {% for document in child_documents %}
               <tr>
@@ -212,6 +214,8 @@
                 <td>{{ document.created }}</td>
                 <td>{{ document.modified }}
               </tr>
+            {% empty %}
+                <tr><td>No Document</td></tr>
             {% endfor %}
           </table>
         </div>
