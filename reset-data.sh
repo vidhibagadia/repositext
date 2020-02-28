@@ -43,6 +43,7 @@ function create_superuser() {
 
 function run_data_scripts() {
 	$PYTHON scripts/data/folders.py
+    $PYTHON scripts/data/documents.py
 }
 
 function main() {

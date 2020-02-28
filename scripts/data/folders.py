@@ -37,7 +37,7 @@ class FolderLoader:
                 setattr(folder, k, v)
             folder.save()
 
-    def add_test_folders(self, amount=3):
+    def add_test_folders(self, amount=4):
         for each in enumerate(range(amount), 1):
             folder = Folder()
             folder.name = f'TestFolder-{each[0]}'
